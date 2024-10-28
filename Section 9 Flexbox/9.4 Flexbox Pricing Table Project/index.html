@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        color: #133e87;
+      }
+
+      body {
+        font-family: "Sono", sans-serif;
+      }
+
+      .pricing-container {
+        display: flex;
+        gap: 1.3rem;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+      }
+
+      .pricing-plan {
+        background-color: #f3f3e0;
+        border-radius: 10%;
+        flex-basis: 300px;
+        height: 500px;
+        width: 300px;
+      }
+
+      .plan-title {
+        text-align: center;
+        font-size: 2rem;
+        padding-top: 4rem;
+        font-weight: bold;
+      }
+
+      .plan-price {
+        text-align: center;
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+        font-size: 2.3rem;
+      }
+
+      .plan-features {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      li {
+        padding: 0.3rem;
+        font-size: 1.1rem;
+      }
+
+      .plan-button {
+        color: #f3f3e0;
+        background-color: #608bc1;
+        width: 28%;
+        margin: 2rem;
+        margin-left: 36%;
+        margin-right: 36%;
+        margin-top: 4rem;
+        border-radius: 10%;
+        padding: 0.6rem;
+      }
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 1250px) {
+        * {
+          color: #133e87;
+        }
+
+        body {
+          font-family: "Sono", sans-serif;
+        }
+
+        .pricing-container {
+          display: flex;
+          gap: 1.3rem;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+
+        .pricing-plan {
+          background-color: #f3f3e0;
+          border-radius: 10%;
+          height: auto;
+          width: 350px;
+        }
+
+        .plan-title {
+          text-align: center;
+          font-size: 2rem;
+          padding-top: 1rem;
+          font-weight: bold;
+        }
+
+        .plan-price {
+          text-align: center;
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          font-size: 2.3rem;
+        }
+
+        .plan-features {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+        }
+
+        li {
+          padding: 0.3rem;
+          font-size: 1.1rem;
+        }
+
+        .plan-button {
+          color: #f3f3e0;
+          background-color: #608bc1;
+          width: 28%;
+          margin: 2rem;
+          margin-left: 36%;
+          margin-right: 36%;
+          border-radius: 10%;
+          padding: 0.6rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pricing-container">
+      <div class="pricing-plan">
+        <div class="plan-title">Basic</div>
+        <div class="plan-price">$9.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 10GB Storage</li>
+          <li>✅ 1 User</li>
+          <li>🚫 Support</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+      <div class="pricing-plan">
+        <div class="plan-title">Standard</div>
+        <div class="plan-price">$19.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 50GB Storage</li>
+          <li>✅ 5 Users</li>
+          <li>✅ Phone &amp; Email Support</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+      <div class="pricing-plan">
+        <div class="plan-title">Premium</div>
+        <div class="plan-price">$49.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 100GB Storage</li>
+          <li>✅ 10 Users</li>
+          <li>✅ 24/7 Support</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+    </div>
+  </body>
+</html>
