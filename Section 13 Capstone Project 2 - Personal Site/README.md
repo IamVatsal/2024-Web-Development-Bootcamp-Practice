@@ -61,9 +61,12 @@ About Me
 
 I Love Tea.
 
+I like reading books, I am a fan of science fiction and fantasy.
+
+I am a fan of the movie "Harry Potter" and "Avengers: Endgame" series.
+
 I'm pursuing a Bachelor's in Computer Engineering and am a member of the Art & Literature Club. Currently, I am studying web development alongside my college coursework.
 
-I like reading books, I am a fan of science fiction and fantasy.
 
 =======================================================
 
