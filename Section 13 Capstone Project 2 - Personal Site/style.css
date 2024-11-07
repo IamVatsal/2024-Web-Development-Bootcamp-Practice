@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 body {
   background-color: #2da1eb;
 }
@@ -25,7 +29,6 @@ body {
 
 .Summary {
   background-color: #2da1eb;
-  height: 860px;
 }
 .Summary p {
   color: #ffffff;
@@ -52,29 +55,6 @@ body {
   font-family: "Syne Mono", monospace;
   font-size: 3rem;
   font-weight: 550;
-}
-
-@keyframes side-to-side {
-  0% {
-    left: 0px;
-    top: 0px;
-  }
-  25% {
-    left: 5px;
-    top: 0px;
-  }
-  50% {
-    left: 0px;
-    top: 0px;
-  }
-  75% {
-    left: -5px;
-    top: 0px;
-  }
-  100% {
-    left: 0px;
-    top: 0px;
-  }
 }
 
 @keyframes up-down {
@@ -113,28 +93,17 @@ body {
 }
 
 #img-dev {
-  display: flex;
-  margin-left: 7%;
-  height: 440px;
-  float: left;
-}
-
-#img-dev:hover {
-  display: flex;
-  margin-left: 7%;
-  height: 440px;
-  float: left;
   position: relative;
-  animation-name: side-to-side;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+}
+#img-dev img {
+  height: 440px;
 }
 
 .Education {
   background-color: #238ad1;
   padding-top: 5.5rem;
   padding-bottom: 3rem;
+  clear: both;
 }
 .Education p {
   font-family: "Quicksand", serif;
@@ -209,6 +178,9 @@ body {
   text-align: center;
 }
 
+.container1 {
+  text-align: center;
+}
 .sticker {
   height: 200px;
   width: 200px;
@@ -234,7 +206,6 @@ body {
 
 .ContactMe {
   background-color: #0e5da0;
-  height: 200px;
 }
 
 .ContactMe .logo:hover {
@@ -287,24 +258,11 @@ body {
     display: none;
   }
   #img-dev {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
     margin: 0;
-    display: flex;
-    padding-left: 34%;
-    padding-right: 34%;
-    margin-top: 25px;
-    height: 440px;
-    float: none;
-  }
-  #img-dev:hover {
-    display: flex;
-    margin-left: 7%;
-    height: 440px;
-    float: left;
-    position: relative;
-    animation-name: side-to-side;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
   }
 }
 
@@ -312,26 +270,9 @@ body {
 }
 
 @media (width <= 992px) {
-  #img-dev {
-    margin: 0;
-    display: flex;
-    padding-left: 30%;
-    padding-right: 34%;
-    margin-top: 25px;
-    height: 440px;
-    float: none;
-  }
 }
 
 @media (width <= 768px) {
-  #img-dev {
-    margin: 0;
-    display: flex;
-    padding-left: 20%;
-    margin-top: 25px;
-    height: 440px;
-    float: none;
-  }
   .Education {
     padding-top: 1rem;
   }
@@ -343,6 +284,18 @@ body {
   }
 }
 
+@media (width <= 650px) {
+  .AboutMe .likes {
+    display: block;
+    text-align: center;
+  }
+  .sticker {
+    height: 300px;
+    width: 300px;
+    border: 10px solid #2da1eb;
+  }
+}
+
 @media (width <= 576px) {
   #name p {
     text-align: center;
@@ -350,12 +303,55 @@ body {
   #sum p {
     text-align: center;
   }
+}
+
+@media (max-width: 576px) and (min-width: 441px) {
+  /* … */
+  #name {
+    padding-top: 2rem;
+  }
+  #name p {
+    padding-top: 0;
+    text-align: center;
+  }
+  #sum p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
   #img-dev {
-    margin: 0;
-    display: flex;
-    padding-left: 20%;
-    margin-top: 25px;
-    height: 350px;
-    float: none;
+    height: 440px;
+  }
+  #img-dev img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 441px) {
+  #name {
+    padding-top: 2rem;
+  }
+  #name p {
+    padding-top: 0;
+    text-align: center;
+  }
+  #sum p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  #img-dev {
+    height: 400px;
+    margin-bottom: 3rem;
+  }
+  #img-dev img {
+    width: 100%;
+  }
+  #sum p {
+    font-size: 1.2rem;
+  }
+  .sticker {
+    height: 200px;
+    width: 200px;
+    border: 10px solid #2da1eb;
   }
 }
