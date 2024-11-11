@@ -17,15 +17,16 @@ body {
 .Navigation a:link {
   color: #ffffff;
 }
+.Navigation a:visited {
+  color: #ffffff;
+}
 .Navigation a:hover {
   color: #ffffff75;
 }
 .Navigation a:active {
   color: #ffffff;
 }
-.Navigation a:visited {
-  color: #ffffff;
-}
+
 
 .Summary {
   background-color: #2da1eb;
