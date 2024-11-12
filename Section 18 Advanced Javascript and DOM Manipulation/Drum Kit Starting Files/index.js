@@ -1,20 +1,18 @@
-
-
-
-//Detecting clicks 
+//Detecting clicks
 
 var drums = document.querySelectorAll(".drum");
 for (var i = 0; i < drums.length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-    sounds(this.innerHTML)
+    sounds(this.innerHTML);
+    buttonAnimation(this.innerHTML);
   });
 }
 //Detecting KeyPress
 
 document.addEventListener("keydown", function (event) {
-  sounds(event.key)
+  sounds(event.key);
+  buttonAnimation(event.key);
 });
-
 
 function sounds(key) {
   switch (key) {
@@ -47,8 +45,14 @@ function sounds(key) {
       crash.play();
       break;
     default:
-      console.log(buttonInnerHTML);
+      console.log(key);
   }
+}
+
+function buttonAnimation(key) {
+  document.querySelector("." + key).classList.add("pressed");
+ setTimeout(function(){document.querySelector("." + key).classList.remove("pressed");},100);
+   
 }
 // var audio = new Audio('./sounds/tom-1.mp3');
 //         audio.play();
