@@ -5,19 +5,19 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-// Only start if the game hasn't started yet
-$("html").keydown(function () {
-  if (!started) {
+// Event listener to start the game on keydown
+$("html").keydown(function() {
+  if (!started) {  // Only start if the game hasn't started yet
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
 });
-// Function to generate the next sequence in the game
 
+// Function to generate the next sequence in the game
 function nextSequence() {
-  userClickedPattern = [];
-  level++;
+  userClickedPattern = [];  // Reset user pattern for each level
+  level++;  // Increase level by 1 each time
   $("#level-title").text("Level " + level);
 
   var randomNumber = Math.floor(Math.random() * 4);
@@ -51,5 +51,31 @@ $(".btn").click(function () {
     $("#" + userChosenColour).removeClass("pressed");
   }, 100);
 
-  //   console.log(userClickedPattern);
+  // Call checkAnswer to see if the user has matched the sequence so far
+  checkAnswer(userClickedPattern.length - 1);
 });
+
+// Function to check the user's answer
+function checkAnswer(currentLevel) {
+  if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function() {
+        nextSequence();
+      }, 1000);
+    }
+  } else {
+    playSound("wrong");
+    $("body").addClass("game-over");
+    setTimeout(function(){$("body").removeClass("game-over")},200);
+    $("#level-title").text("Game Over, Press Any Key to Restart");
+    startOver();
+  }
+}
+
+// Function to reset the game
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
+
