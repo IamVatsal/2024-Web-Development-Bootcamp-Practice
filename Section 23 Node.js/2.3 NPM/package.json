@@ -1,0 +1,15 @@
+{
+  "name": "vatsal_superherroname",
+  "version": "1.0.0",
+  "description": "create super hero name for me",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vatsal",
+  "license": "ISC",
+  "dependencies": {
+    "superhero-name-library": "^1.2.2"
+  }
+}
