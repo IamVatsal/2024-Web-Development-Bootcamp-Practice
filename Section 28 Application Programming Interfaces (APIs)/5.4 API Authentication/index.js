@@ -1,15 +1,22 @@
 import express, { response } from "express";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
+const apiKey = process.env.API_KEY;
+const BearerToken = process.env.BEARER_TOKEN;
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 
 const app = express();
 const port = 3000;
 const API_URL = "https://secrets-api.appbrewery.com/";
 
 //TODO 1: Fill in your values for the 3 types of auth.
-const yourUsername = "onPhone";
-const yourPassword = "123456";
-const yourAPIKey = "e80c2761-194e-45ac-b384-1d2fb48c973f";
-const yourBearerToken = "1faf53d9-132a-4d8c-a04b-aa4437ee1510";
+const yourUsername = username;
+const yourPassword = password;
+const yourAPIKey = apiKey;
+const yourBearerToken = BearerToken;
 
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "API Response." });
@@ -36,7 +43,7 @@ app.get("/basicAuth", async (req, res) => {
       {
         auth: {
           username: yourUsername,
-          password: yourPassword
+          password: yourPassword,
         },
       }
     );
