@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="post-container">
+        <% posts.forEach( (post, index) => { %>
+        <div id="post_<%= index %>" class="post">
+          <h2><%= post.title %></h2>
+          <h5><%= post.date %></h5>
+          <p><%= post.content %></p>
+          <div class="buttons">
+            <button class="edit-btn" onclick="editPost(<%= index %>)">
+              Edit
+            </button>
+            <button class="delete-btn" onclick="deletePost(<%= index %>)">
+              Delete
+            </button>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <div class="create-post-container">
+        <form id="myForm" method="post">
+          <table>
+            <tr>
+              <th><label for="title">Title:</label></th>
+              <td><input type="text" name="title" id="title" required /></td>
+            </tr>
+            <tr>
+              <th><label for="content">Content:</label></th>
+              <td>
+                <textarea
+                  name="content"
+                  id="content"
+                  cols="60"
+                  rows="10"
+                  required
+                ></textarea>
+              </td>
+            </tr>
+          </table>
+          <input id="post" type="submit" value="POST" formaction="/submit" />
+        </form>
+      </div>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

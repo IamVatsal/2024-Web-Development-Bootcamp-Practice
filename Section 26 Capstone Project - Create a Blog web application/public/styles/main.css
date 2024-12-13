@@ -1,0 +1,9 @@
+h2 {
+  color: red;
+}
+.post-container,
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

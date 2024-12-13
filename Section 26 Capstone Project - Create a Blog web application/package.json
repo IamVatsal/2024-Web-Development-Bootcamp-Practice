@@ -1,0 +1,17 @@
+{
+  "name": "section-26-capstone-project---create-a-blog-web-application",
+  "version": "1.0.0",
+  "description": "Capstone Project That is simple blog site that you can create blog, edit blog and delete blog via http req  ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vatsal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}
