@@ -4,15 +4,19 @@ import pg from "pg";
 import dotenv from "dotenv";
 import axios from "axios";
 
+
 dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const db = new pg.Client({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
-  port: 5432,
+  port: process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 db.connect();
@@ -62,7 +66,6 @@ app.get("/new", async (req, res) => {
 });
 
 app.post("/new", async (req, res) => {
-
   const book = {
     title: req.body.title,
     olid: req.body.olid,
@@ -182,5 +185,5 @@ app.get("/search", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on port : ${port}`);
 });
