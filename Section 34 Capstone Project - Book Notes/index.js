@@ -4,7 +4,6 @@ import pg from "pg";
 import dotenv from "dotenv";
 import axios from "axios";
 
-
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
@@ -185,5 +184,5 @@ app.get("/search", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port : ${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
