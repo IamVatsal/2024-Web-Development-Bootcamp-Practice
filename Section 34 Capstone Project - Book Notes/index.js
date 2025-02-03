@@ -13,9 +13,9 @@ const db = new pg.Client({
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
 });
 
 db.connect();
@@ -172,8 +172,12 @@ app.get("/sort/:column", async (req, res) => {
   res.render("index.ejs", { books: books, basePath: "../" });
 });
 
+function capitalize(s) {
+  return s && String(s[0]).toUpperCase() + String(s).slice(1);
+}
+
 app.get("/search", async (req, res) => {
-  const search = req.query.search;
+  const search = capitalize(req.query.search);
 
   let result = await db.query(
     `SELECT id, title, olid, authorName, genre, TO_CHAR(finishDate, 'DD/MM/YYYY') AS finishDate, rating, summary FROM book_details WHERE title LIKE $1`,
